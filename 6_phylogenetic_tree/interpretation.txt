@@ -1,0 +1,7 @@
+===============
+Interpretations
+===============
+
+# Sample 1 (KZ-1-ITS1R) clustered with Annulohypoxylon-related ITS sequences.
+# Closest affinity was observed with ON557328.1.
+# Bootstrap support for the branch was moderate (77)

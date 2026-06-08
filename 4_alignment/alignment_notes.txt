@@ -1,0 +1,7 @@
+===================
+Sequence Alignment
+===================
+1. Forward and reverse reads were aligned using MUSCLE in MEGA12.
+   Non-overlapping terminal regions were manually trimmed.
+
+2. Sample 1 is aligned with top hits from blast

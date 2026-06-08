@@ -1,0 +1,11 @@
+===========================
+Chromatogram Quality Notes
+===========================
+
+# Forward read:
+Good quality observed between positions 50–250.
+
+# Reverse read:
+Good quality observed between positions 70–270.
+
+~Beginning and terminal regions showed noisy peaks and overlap.

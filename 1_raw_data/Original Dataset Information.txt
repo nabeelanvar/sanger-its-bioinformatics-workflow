@@ -1,0 +1,9 @@
+==============================
+Original Dataset Information
+==============================
+Dataset obtained from Zenodo.
+
+Ootsuki, R. (2026). Sanger chromatogram and barcode data for seven culture-derived microbial isolates from surface-sterilized leaves of the cultivated fern Cyrtomium fortunei [Data set]. Zenodo. 
+https://doi.org/10.5281/zenodo.20148616
+
+Sample 1 selected for workflow demonstration.

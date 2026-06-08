@@ -1,0 +1,7 @@
+==============
+Tree Settings
+==============
+Method: Neighbor-Joining
+Model: p-distance
+Bootstrap: 100 replicates
+Gap handling: pairwise deletion
