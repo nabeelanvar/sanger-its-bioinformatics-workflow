@@ -1,0 +1,170 @@
+================
+  Project Notes
+================
+## Dataset Selection
+
+Raw Sanger sequencing data were obtained from a publicly available Zenodo dataset containing fungal and bacterial barcode records associated with *Cyrtomium fortunei* leaf isolates.
+
+From the available seven samples, Sample 1 was selected for workflow demonstration because it contained:
+
+* forward and reverse `.ab1` chromatogram files
+* exported sequence files
+* associated metadata
+
+The goal of the project was not species discovery, but understanding the complete Sanger bioinformatics workflow from raw chromatogram data to phylogenetic analysis.
+
+---
+
+# Initial Chromatogram Inspection
+
+The forward and reverse '.ab1' files were opened in Chromas for manual quality inspection.
+
+Observations:
+
+* The beginning regions of both reads showed broad peaks, overlapping signals, and lower confidence base calling.
+* The middle portions showed clean and sharp peaks with good separation.
+* Signal quality deteriorated toward the end of reads.
+* Some terminal regions contained no usable signal.
+
+Approximate usable regions:
+
+* Forward read: positions ~50–250
+* Reverse read: positions ~70–270
+
+This demonstrated the typical Sanger sequencing quality pattern:
+poor-quality start → high-quality middle → degraded end.
+
+---
+
+# Alignment Troubleshooting
+
+The forward and reverse reads were exported as FASTA files and loaded into MEGA12.
+
+Initial alignment showed:
+
+* mismatches at the beginning and end
+* several gaps
+* poor overlap in low-quality regions
+
+The middle region aligned correctly.
+
+At first, the reverse read did not align properly because reverse complement conversion had not yet been considered.
+
+After reverse-complementing the reverse read, the overlap improved significantly.
+
+This helped in understanding:
+
+* sequence orientation
+* forward/reverse sequencing logic
+* importance of reverse complement conversion
+
+---
+
+# Manual Trimming
+
+Instead of using automated trimming tools, low-quality terminal regions were manually removed using a text editor.
+
+Problematic regions were identified by:
+
+* mismatches in alignment
+* noisy chromatogram peaks
+* poor overlap
+
+After trimming:
+
+* the alignment quality improved substantially
+* forward and reverse reads showed nearly complete overlap
+* gaps and mismatches were reduced
+
+This demonstrated how sequence quality directly affects alignment accuracy.
+
+---
+
+# Consensus Sequence Generation
+
+Since the trimmed reads showed complete agreement in the overlap region, one cleaned sequence was selected as the consensus sequence for downstream analysis.
+
+This step helped in understanding:
+
+* consensus sequence generation
+* overlap validation
+* sequence confidence assessment
+
+---
+
+# BLAST Analysis
+
+The consensus FASTA sequence was analyzed using NCBI BLAST.
+
+Observations:
+
+* Multiple top hits showed 100% identity and 100% query coverage.
+* Most matches corresponded to Annulohypoxylon-associated ITS sequences.
+
+This demonstrated:
+
+* sequence similarity searching
+* interpretation of BLAST metrics
+* importance of query coverage and identity values
+
+Learned that:
+BLAST similarity alone does not guarantee definitive species identification.
+
+---
+
+# Multiple Sequence Alignment
+
+A total of 17 reference sequences from top BLAST hits were downloaded and aligned together with the sample sequence using MUSCLE in MEGA12.
+
+During this stage:
+
+* MUSCLE and ClustalW differences were explored
+* codon vs non-codon alignment concepts were learned
+* importance of homologous alignment positions became clearer
+
+Since ITS is a non-coding region, regular MUSCLE alignment was used instead of MUSCLE (Codon).
+
+---
+
+# Phylogenetic Tree Construction
+
+A Neighbor-Joining tree with bootstrap analysis was constructed in MEGA12.
+
+Settings used:
+
+* p-distance model
+* pairwise deletion
+* 100 bootstrap replicates
+
+Initial bootstrap support for the sample branch was approximately 61.
+After reconstructing the tree, bootstrap support changed to approximately 77.
+
+This helped in understanding:
+
+* bootstrap variability
+* stochastic nature of phylogenetic inference
+* phylogenetic uncertainty
+* difference between topology and visual proximity
+
+An important realization during interpretation:
+the closest evolutionary relationship is determined by shared nodes (topology), not by visual distance between labels on the tree.
+
+The sample sequence clustered within an Annulohypoxylon-related clade and showed closest affinity to ON557328.1.
+
+---
+
+# Major Learning Outcomes
+
+This project provided hands-on understanding of:
+
+* chromatogram interpretation
+* sequence quality assessment
+* trimming logic
+* reverse complement handling
+* sequence alignment
+* BLAST analysis
+* phylogenetic tree construction
+* bootstrap interpretation
+* evolutionary relationship analysis
+
+The project demonstrated how raw sequencing signals are transformed into biologically interpretable results through a stepwise bioinformatics workflow.
