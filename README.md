@@ -8,13 +8,13 @@ This project demonstrates an end-to-end beginner bioinformatics workflow using r
 The dataset contained seven microbial barcode records derived from surface-sterilized leaf tissue of *Cyrtomium fortunei*. For this workflow demonstration, only *Sample 1* was selected and analyzed using the forward and reverse .ab1 chromatogram files.
 
 ## Objectives
-Learn how to inspect raw Sanger chromatogram data
-Perform manual sequence quality assessment
-Align forward and reverse reads
-Generate a cleaned consensus sequence
-Identify sequences using `NCBI BLAST`
-Construct a phylogenetic tree using `MEGA12`
-Understand evolutionary relationships among related ITS sequences
+- Learn how to inspect raw Sanger chromatogram data
+- Perform manual sequence quality assessment
+- Align forward and reverse reads
+- Generate a cleaned consensus sequence
+- Identify sequences using `NCBI BLAST`
+- Construct a phylogenetic tree using `MEGA12`
+- Understand evolutionary relationships among related ITS sequences
 ## Dataset Source
 
 Sequence data were obtained from the Zenodo underlying-data package associated with fungal and bacterial barcode records (includes 7 data records).
